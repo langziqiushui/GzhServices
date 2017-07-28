@@ -4,6 +4,7 @@ using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Security;
 
 namespace GzhServices
 {
@@ -21,6 +22,10 @@ namespace GzhServices
             var dataBuffer = Encoding.UTF8.GetBytes(strOrgData);
             var hashBytes = hmacsha1.ComputeHash(dataBuffer);
             return Convert.ToBase64String(hashBytes);
+        }
+        public static string HashPasswordForStoringInConfigFile(string str, string type)
+        {
+            return FormsAuthentication.HashPasswordForStoringInConfigFile(str, type);
         }
     }
 }
