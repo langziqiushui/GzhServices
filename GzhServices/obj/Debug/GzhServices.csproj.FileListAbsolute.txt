@@ -1,0 +1,6 @@
+D:\WorkSpace\GzhServices\GzhServices\bin\GzhServices.dll.config
+D:\WorkSpace\GzhServices\GzhServices\bin\GzhServices.dll
+D:\WorkSpace\GzhServices\GzhServices\bin\GzhServices.pdb
+D:\WorkSpace\GzhServices\GzhServices\obj\Debug\GzhServices.csprojResolveAssemblyReference.cache
+D:\WorkSpace\GzhServices\GzhServices\obj\Debug\GzhServices.dll
+D:\WorkSpace\GzhServices\GzhServices\obj\Debug\GzhServices.pdb
