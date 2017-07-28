@@ -54,6 +54,7 @@ namespace GzhServices
         /// </summary>
         private void Handle(string postStr)
         {
+            //help.WriteLog(postStr);
             string responseContent = help.ReturnMessage(postStr);
             HttpContext.Current.Response.ContentEncoding = Encoding.UTF8;
             HttpContext.Current.Response.Write(responseContent);

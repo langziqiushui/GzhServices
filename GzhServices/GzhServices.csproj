@@ -59,6 +59,8 @@
   <ItemGroup>
     <Content Include="Core\createMenu.aspx" />
     <Content Include="Core\menu\menu.txt" />
+    <Content Include="FrmSendMessage.aspx" />
+    <Content Include="js\jquery.js" />
     <Content Include="wx.ashx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -80,6 +82,13 @@
       <DependentUpon>createMenu.aspx</DependentUpon>
     </Compile>
     <Compile Include="Core\messageHelp.cs" />
+    <Compile Include="FrmSendMessage.aspx.cs">
+      <DependentUpon>FrmSendMessage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrmSendMessage.aspx.designer.cs">
+      <DependentUpon>FrmSendMessage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

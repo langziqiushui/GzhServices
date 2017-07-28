@@ -49,38 +49,29 @@ namespace GzhServices
                 //菜单单击事件
                 if (Event.InnerText.Equals("CLICK"))
                 {
-                    if (EventKey.InnerText.Equals("click_one"))//click_one
+                    if (EventKey.InnerText.Equals("wather"))//天气
                     {
                         responseContent = string.Format(ReplyType.Message_Text,
                             FromUserName.InnerText,
                             ToUserName.InnerText,
                             DateTime.Now.Ticks,
-                            "你点击的是click_one");
+                            "<a href=\"http://www.weather.com.cn/weather/101190404.shtml\">点击查看最近天气</a>");
                     }
-                    else if (EventKey.InnerText.Equals("click_two"))//click_two
+                    else if (EventKey.InnerText.Equals("aboutus"))//关于我
                     {
-                        responseContent = string.Format(ReplyType.Message_News_Main,
+                        responseContent = string.Format(ReplyType.Message_Text,
                             FromUserName.InnerText,
                             ToUserName.InnerText,
                             DateTime.Now.Ticks,
-                            "2",
-                             string.Format(ReplyType.Message_News_Item, "我要寄件", "",
-                             "http://www.soso.com/orderPlace.jpg",
-                             "http://www.soso.com/") +
-                             string.Format(ReplyType.Message_News_Item, "订单管理", "",
-                             "http://www.soso.com/orderManage.jpg",
-                             "http://www.soso.com/"));
+                            "我是陈有才，感谢关注");
                     }
-                    else if (EventKey.InnerText.Equals("click_three"))//click_three
+                    else if (EventKey.InnerText.Equals("xiaohua"))//笑话
                     {
-                        responseContent = string.Format(ReplyType.Message_News_Main,
+                        responseContent = string.Format(ReplyType.Message_Text,
                             FromUserName.InnerText,
                             ToUserName.InnerText,
                             DateTime.Now.Ticks,
-                            "1",
-                             string.Format(ReplyType.Message_News_Item, "标题", "摘要",
-                             "http://www.soso.com/jieshao.jpg",
-                             "http://www.soso.com/"));
+                            "这个笑话真的不好笑");
                     }
                 }
             }
@@ -117,6 +108,14 @@ namespace GzhServices
                             "1", string.Format(ReplyType.Message_News_Item, "最新新闻", "了解最近的新闻",
                              "http://mat1.gtimg.com/news/news2017/img/logo.png",
                              "http://news.qq.com/"));
+                    }
+                    else
+                    {
+                        responseContent = string.Format(ReplyType.Message_Text,
+                            FromUserName.InnerText,
+                            ToUserName.InnerText,
+                            DateTime.Now.Ticks,
+                            resultMessage);
                     }
                 }
                 return responseContent;
