@@ -8,7 +8,7 @@ namespace GzhServices
     /// <summary>
     /// Token 的摘要说明
     /// </summary>
-    public class Token : IHttpHandler
+    public class wx : IHttpHandler
     {
 
         public void ProcessRequest(HttpContext context)

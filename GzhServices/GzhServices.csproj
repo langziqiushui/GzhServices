@@ -57,7 +57,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Token.ashx" />
+    <Content Include="wx.ashx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -74,8 +74,8 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Token.ashx.cs">
-      <DependentUpon>Token.ashx</DependentUpon>
+    <Compile Include="wx.ashx.cs">
+      <DependentUpon>wx.ashx</DependentUpon>
     </Compile>
     <Compile Include="Util\Util.cs" />
   </ItemGroup>
