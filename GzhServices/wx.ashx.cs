@@ -15,15 +15,23 @@ namespace GzhServices
 
         private const string token = "qiushuizhijiagzhtoken";
         private const string _myOpenid = "wxa3da5fcaddf4c8b4";
-        private static string postStr = "";
+        private static string postString = "";
+        private messageHelp help = new messageHelp();
+
         public void ProcessRequest(HttpContext context)
         {
             context.Response.ContentType = "text/plain";
 
-            if (context.Request.HttpMethod == "POST")
+            if (context.Request.HttpMethod.ToUpper() == "POST")
             {
-                //消息处理
-                ProccessMessage();
+                //消息处理 
+                using (Stream stream = HttpContext.Current.Request.InputStream)
+                {
+                    Byte[] postBytes = new Byte[stream.Length];
+                    stream.Read(postBytes, 0, (Int32)stream.Length);
+                    postString = Encoding.UTF8.GetString(postBytes);
+                    Handle(postString);
+                }
             }
             else
             {
@@ -41,16 +49,14 @@ namespace GzhServices
             }
         }
 
-        public static void ProccessMessage()
+        /// <summary>
+        /// 处理信息并应答
+        /// </summary>
+        private void Handle(string postStr)
         {
-            Stream s = System.Web.HttpContext.Current.Request.InputStream;
-            byte[] b = new byte[s.Length];
-            s.Read(b, 0, (int)s.Length);
-            postStr = Encoding.UTF8.GetString(b);
-            if (!string.IsNullOrEmpty(postStr))
-            {
-                MessageServices.ResponseMsg(postStr);
-            }
+            string responseContent = help.ReturnMessage(postStr);
+            HttpContext.Current.Response.ContentEncoding = Encoding.UTF8;
+            HttpContext.Current.Response.Write(responseContent);
         }
 
         /// <summary>
