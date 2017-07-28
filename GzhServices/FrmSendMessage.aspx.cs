@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Web;
 using System.Web.UI;
@@ -17,17 +18,14 @@ namespace GzhServices
                 string content = Request["content"] ?? "";
                 if (content != "")
                 {
-                    messageHelp help = new messageHelp();
-                    string resultMessage = string.Format(ReplyType.Message_Text,
-                           "orUkWxBlHNfkBHJpBh61YHnyykTY",
-                           "gh_0836efd869eb",
-                           DateTime.Now.Ticks,
-                           content);
-
-                    //HttpContext.Current.Response.ContentEncoding = Encoding.UTF8;
-                    //HttpContext.Current.Response.Write(resultMessage);
-
-                    Response.Write("发送成功");
+                    string json = "{'touser':'orUkWxBlHNfkBHJpBh61YHnyykTY','msgtype':'text','text':{'content':'" + content + "'}}";
+                    WebClient webClient = new WebClient();
+                    string uriString = "https://api.weixin.qq.com/cgi-bin/message/custom/send?access_token=1NB35ThVQAWgUzcNwHN4W8s68x2ZubFaqLNck52WuHxTRkYGMjH5fVzu06VKr4eCDz54_XfnxEVKbuKGFkuIuW1CT13MeAPLbJ2ggyAIctPtv9orFLBhWQATVbpIycQ2HAKeAIAATD";
+                    WebClient myWebClient = new WebClient();
+                    byte[] byteArray = Encoding.UTF8.GetBytes(json);
+                    byte[] pageData = webClient.UploadData(uriString, "POST", byteArray);
+                    Response.Write(Encoding.UTF8.GetString(pageData));
+                    Response.End();
                 }
             }
         }
