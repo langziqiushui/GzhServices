@@ -20,8 +20,7 @@ namespace GzhServices
                 {
                     string json = "{'touser':'orUkWxBlHNfkBHJpBh61YHnyykTY','msgtype':'text','text':{'content':'" + content + "'}}";
                     WebClient webClient = new WebClient();
-                    string uriString = "https://api.weixin.qq.com/cgi-bin/message/custom/send?access_token=1NB35ThVQAWgUzcNwHN4W8s68x2ZubFaqLNck52WuHxTRkYGMjH5fVzu06VKr4eCDz54_XfnxEVKbuKGFkuIuW1CT13MeAPLbJ2ggyAIctPtv9orFLBhWQATVbpIycQ2HAKeAIAATD";
-                    WebClient myWebClient = new WebClient();
+                    string uriString = "https://api.weixin.qq.com/cgi-bin/message/custom/send?access_token=m49HEiU3d2vWHRqD5wtzik_1w3sbDmC0dcLzm-jern7KZtJHBWhTICAb6QcD6qAczOzJz25QGgV-Efcc29ZAIUc4FKNgRqx0Fd85lnRPImEr2h5cHZOVyFLn9jqt48LFJCIbACATMS";
                     byte[] byteArray = Encoding.UTF8.GetBytes(json);
                     byte[] pageData = webClient.UploadData(uriString, "POST", byteArray);
                     Response.Write(Encoding.UTF8.GetString(pageData));

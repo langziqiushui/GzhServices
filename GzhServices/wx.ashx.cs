@@ -15,6 +15,7 @@ namespace GzhServices
 
         private const string token = "qiushuizhijiagzhtoken";
         private const string _myOpenid = "wxa3da5fcaddf4c8b4";
+        private const string strAppSecret = "8ed6222d87d706ed872e5b2d1e8b89d5";
         private static string postString = "";
         private messageHelp help = new messageHelp();
 

@@ -25,7 +25,7 @@ namespace GzhServices
             string menu = sr.ReadToEnd();
             sr.Close();
             fs1.Close();
-            GetPage("https://api.weixin.qq.com/cgi-bin/menu/create?access_token=al5kJ2dCPVwVQw67phETxnqp3lkNgiV4QQstZCqzQOCm1uAialCNgJ_3KOFQ3hzAIAu0f3HtWbtn8JmFakZTQ1C39oSXtEFmBrignZQIlke_vRmksM6BdF9omW2Be1nhLTIeAFAYGV", menu);
+            GetPage("https://api.weixin.qq.com/cgi-bin/menu/create?access_token=m49HEiU3d2vWHRqD5wtzik_1w3sbDmC0dcLzm-jern7KZtJHBWhTICAb6QcD6qAczOzJz25QGgV-Efcc29ZAIUc4FKNgRqx0Fd85lnRPImEr2h5cHZOVyFLn9jqt48LFJCIbACATMS", menu);
         }
         public string GetPage(string posturl, string postData)
         {
